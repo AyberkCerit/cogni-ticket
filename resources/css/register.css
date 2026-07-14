@@ -1,0 +1,40 @@
+.peach-glow-container {
+    position: relative;
+}
+.peach-glow-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(255, 199, 167, 0.15) 0%, rgba(255, 199, 167, 0) 70%);
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 50%;
+    filter: blur(40px);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid #FFE5D4;
+}
+
+.input-glow:focus {
+    outline: none;
+    border-color: #FFC7A7;
+    box-shadow: 0 0 15px rgba(255, 199, 167, 0.3);
+}
+
+.btn-peach {
+    background-color: #FFC7A7;
+    color: #211a16;
+    transition: all 0.3s ease;
+}
+.btn-peach:hover {
+    box-shadow: 0px 10px 30px -5px rgba(255, 199, 167, 0.4);
+    transform: translateY(-1px);
+}

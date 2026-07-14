@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+}
+
+@layer components {
+    .glass-input {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+    .glass-input::placeholder {
+        color: #9ca3af;
+    }
+    .glass-input:focus {
+        border-color: #FFC7A7;
+        box-shadow: 0 0 0 4px rgba(255, 199, 167, 0.3);
+        outline: none;
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+@layer utilities {
+    @media (prefers-reduced-motion: no-preference) {
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-gradient-shift {
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 20px rgba(255, 199, 167, 0.6), 0 0 40px rgba(255, 219, 200, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(255, 199, 167, 0.9), 0 0 60px rgba(255, 219, 200, 0.7), 0 0 80px rgba(255, 199, 167, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(255, 199, 167, 0.6), 0 0 40px rgba(255, 219, 200, 0.4); }
+        }
+        .animate-pulse-glow {
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down {
+            animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+    }
+}
