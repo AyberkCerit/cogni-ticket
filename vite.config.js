@@ -10,7 +10,10 @@ export default defineConfig({
                 'resources/css/login.css', 
                 'resources/js/login.js',
                 'resources/css/register.css', 
-                'resources/js/register.js'
+                'resources/js/register.js',
+                'resources/js/dashboard.js',
+                'resources/css/ticket-create.css',
+                'resources/js/ticket-create.js'
             ],
             refresh: true,
         }),

@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model; // Authenticatable yerine standart Model çağrılır
+use Illuminate\Database\Eloquent\Model;
+use App\Enums\TicketStatus;
+use App\Enums\TicketPriority;
 
-class Ticket extends Model // Sınıf Model'den miras alır
+class Ticket extends Model
 {
     use HasFactory; // Notifiable ve UserFactory kaldırıldı
 
@@ -23,6 +25,11 @@ class Ticket extends Model // Sınıf Model'den miras alır
         'priority',
         'ai_summary',
         'is_ai_processed',
+    ];
+
+    protected $casts = [
+        'status' => TicketStatus::class,
+        'priority' => TicketPriority::class,
     ];
 
     public function user()

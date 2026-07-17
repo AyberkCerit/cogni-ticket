@@ -1,48 +1,117 @@
-# Intern Project - Ticket Management System
+<div align="right">
+  <a href="README.tr.md"><img src="https://img.shields.io/badge/Dil-T%C3%BCrk%C3%A7e-red?style=for-the-badge&logo=translation" alt="Türkçe"></a>
+</div>
 
-Welcome to the **Intern Project**! This repository is currently in its initial development phase, focusing on building a robust, modern, and beautiful Ticket Management System (or similar SaaS product). 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300" alt="Laravel Logo">
+  
+  <h1>CogniTicket | Modern AI-Powered Support System</h1>
 
-## 🚀 Technologies Used
+  <p>
+    <strong>A high-performance, full-stack SaaS application showcasing modern web development, clean architecture, and premium UX/UI design.</strong>
+  </p>
 
-We are building this project using a modern tech stack to ensure high performance, maintainability, and an incredible user experience:
+  <p>
+    <img src="https://img.shields.io/badge/PHP-8.4-777BB4?style=flat-square&logo=php&logoColor=white" alt="PHP 8.4" />
+    <img src="https://img.shields.io/badge/Laravel-12.x-FF2D20?style=flat-square&logo=laravel&logoColor=white" alt="Laravel 12" />
+    <img src="https://img.shields.io/badge/Groq_API_(Llama_3)-F55036?style=flat-square&logo=ai&logoColor=white" alt="Groq API" />
+    <img src="https://img.shields.io/badge/Laravel_Queues-333333?style=flat-square&logo=laravel&logoColor=white" alt="Laravel Queues" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/Vanilla_JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="Vanilla JS" />
+    <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
+  </p>
+</div>
 
-### Backend
-- **[Laravel 12](https://laravel.com/)**: The core PHP framework used for routing, logic, and backend architecture.
-- **[PHP 8.4](https://www.php.net/)**: Taking advantage of the latest PHP features.
-- **MySQL**: Relational database for storing all application data.
-- **Laravel Breeze**: Used for scaffolding the robust authentication system (Login, Registration, Password Resets).
+---
 
-### Frontend
-- **[Tailwind CSS](https://tailwindcss.com/)**: A highly customizable utility-first CSS framework. We have integrated a completely custom "Peach-Neon" and "Glassmorphism" design system extending the base Tailwind config.
-- **[Anime.js v4](https://animejs.com/)**: Used for complex, smooth, and interactive UI animations (like our glowing inputs, shaking validation errors, and text reveals).
-- **Vanilla JavaScript**: For lightweight DOM manipulations and client-side form validations.
-- **[Vite](https://vitejs.dev/)**: For lightning-fast frontend asset bundling.
+## Overview
 
-## 🗄️ Database Status: Completed!
+**CogniTicket** is a next-generation ticket management system engineered to handle customer support workflows efficiently. Built from the ground up utilizing **Laravel 12**, it demonstrates advanced software engineering principles including **MVC Design**, **Object-Oriented Programming (OOP)**, and **Clean Code** standards.
 
-The core database architecture and seeding have been successfully set up. 
-We have fully configured the migrations and model relationships for:
-- **Users**: Authentication and role-based access.
-- **Categories**: Grouping tickets logically.
-- **Tickets**: The core entities that users can create and track.
-- **Messages**: A conversational system linked to tickets.
-- **Activity Logs**: To track actions and history within the system.
+The application completely moves away from traditional synchronous page loads, offering a seamless **SPA-like experience** powered entirely by **Vanilla JavaScript (Fetch API)**. The interface is meticulously crafted with a customized **Glassmorphism** design system, delivering a premium, modern aesthetic without relying on heavy frontend frameworks.
 
-Furthermore, we have built a comprehensive `DatabaseSeeder` utilizing Faker to populate the database with realistic dummy data for testing purposes.
+## 📸 Screenshots
 
-## 🎨 UI/UX Highlight
+<div align="center">
+  <img src="docs/images/landing.png" alt="Landing Page" width="800">
+  <br><em>Landing Page</em><br><br>
 
-The **Authentication Flow** (Login and Sign Up) has been completely redesigned. 
-- Replaced standard generic views with a beautiful, custom glassmorphism design.
-- Implemented **Client-Side Validation** combined with Anime.js. If you try to submit an empty form, the page doesn't reload. Instead, the inputs gently shake and smooth error messages fade in instantly.
+  <img src="docs/images/dashboard.png" alt="Dashboard" width="800">
+  <br><em>Dashboard Overview</em><br><br>
 
-## 🔜 What's Next?
+  <img src="docs/images/tickets.png" alt="Tickets Management" width="800">
+  <br><em>Tickets Management</em><br><br>
+</div>
 
-This is just the beginning! The foundation is solid, the database is ready, and the authentication system looks gorgeous. 
-In the upcoming phases, we will be:
-- Building the main Dashboard for users.
-- Implementing full CRUD functionalities for the Ticket system.
-- Designing a responsive interface for managing and replying to tickets.
-- Adding real-time elements or advanced filtering.
+## Key Features & Technical Highlights
 
-Stay tuned for more updates!
+| Feature | Description |
+| :--- | :--- |
+| **Clean Architecture** | Strict adherence to MVC principles. Logic is decoupled using Service Classes, Enums, and custom Form Requests for maintainable and testable code. |
+| **Asynchronous UI** | Global AJAX handlers and dynamic DOM updates provide lightning-fast, reload-free interactions across all forms, tables, and pagination. |
+| **Asynchronous AI Analysis** | Integrated with **Groq API (Llama 3.3 70B)** for automated ticket summarization and insights. Utilizes **Laravel Queues** for non-blocking background processing and a robust **Cache** architecture for high-performance result delivery. |
+| **Premium UI/UX Design** | Custom-built "Glassmorphism" theme utilizing Tailwind CSS and Anime.js. Features fluid micro-animations, neon accents, and responsive layouts. |
+| **Internationalization (i18n)**| Robust, session-based multi-language support (English & Turkish) utilizing Laravel's JSON translation architecture. |
+| **Security & Auth** | Role-Based Access Control (RBAC), CSRF protection, secure file uploads, and encrypted session management. |
+
+## System Architecture
+
+```text
+├── app/
+│   ├── Http/Controllers/    # Lean controllers handling HTTP requests
+│   ├── Jobs/                # Asynchronous queue workers (AI Analysis Jobs)
+│   ├── Services/            # Core business logic and external API integrations
+│   ├── Enums/               # Strongly typed states (TicketPriority, TicketStatus)
+│   └── Models/              # Eloquent ORM models with strict relationships
+├── resources/
+│   ├── js/                  # Modular Vanilla JS (AJAX handlers, UI animations)
+│   └── views/               # Blade templating with dynamic component structures
+└── lang/                    # JSON-based localization files (en.json, tr.json)
+```
+
+## Quick Setup
+
+To run this project locally, ensure you have PHP, Composer, Node.js, and a MySQL database available.
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/cogni-ticket.git
+
+# 2. Install PHP & Node.js dependencies
+composer install
+npm install
+
+# 3. Setup Environment
+cp .env.example .env
+php artisan key:generate
+
+# 4. Configure .env File
+# Add your Groq API Key and ensure the Queue connection is set for background jobs
+GROQ_API_KEY=your_api_key_here
+QUEUE_CONNECTION=database
+
+# 5. Migrate and Seed the Database
+php artisan migrate --seed
+
+# 6. Build Assets
+npm run build
+
+# 7. Start the Server and Queue Worker
+# Run these commands in separate terminal instances:
+php artisan serve
+php artisan queue:work
+```
+
+## Why This Project? (For Recruiters)
+
+This project was developed to demonstrate my capability to build scalable, production-ready web applications. It highlights my proficiency in:
+- Writing **Clean, SOLID, and DRY** backend code using modern PHP.
+- Developing **API-first** communication layers without relying on bloated frontend libraries.
+- Integrating **Third-Party APIs** (Groq AI) safely utilizing background jobs and queues.
+- Creating **pixel-perfect, responsive UI/UX** from scratch.
+- Problem-solving and independently architecting complex software requirements.
+
+---
+<div align="center">
+  <i>Developed with passion for clean code and great design.</i>
+</div>

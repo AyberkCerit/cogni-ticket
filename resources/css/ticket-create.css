@@ -1,0 +1,38 @@
+/* Custom Scrollbar for Textarea */
+textarea.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+textarea.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+textarea.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 199, 167, 0.2);
+    border-radius: 10px;
+}
+textarea.custom-scrollbar:focus::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 199, 167, 0.4);
+}
+
+/* Select Wrapper Customization */
+.custom-select-wrapper select {
+    background-image: none; /* Hide default arrow in some browsers */
+}
+
+/* Glowing Submit Button Styles */
+.submit-glow-btn {
+    box-shadow: 0 0 15px rgba(255, 199, 167, 0.2);
+}
+.submit-glow-btn:hover {
+    box-shadow: 0 0 25px rgba(255, 199, 167, 0.4);
+}
+.submit-glow-btn.is-loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+.submit-glow-btn.is-loading .btn-text,
+.submit-glow-btn.is-loading .btn-icon {
+    opacity: 0;
+}
+.submit-glow-btn.is-loading .loading-icon {
+    display: block !important;
+}
