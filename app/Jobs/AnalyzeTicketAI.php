@@ -28,7 +28,6 @@ class AnalyzeTicketAI implements ShouldQueue
             'Authorization' => 'Bearer ' . env('GROQ_API_KEY'),
         ])->post('https://api.groq.com/openai/v1/chat/completions', [
             'model' => 'llama-3.3-70b-versatile',
-            // Yapay zekayı JSON modunda çalışmaya zorluyoruz
             'response_format' => ['type' => 'json_object'], 
             'messages' => [
                 [
@@ -51,15 +50,10 @@ class AnalyzeTicketAI implements ShouldQueue
         ]);
 
         if ($response->successful()) {
-            // Gelen string'i PHP dizisine (Array) çeviriyoruz
             $aiResponse = json_decode($response->json('choices.0.message.content'), true);
-
-            // Yapay zekanın doğru JSON döndüğünden emin olmak için kontrol
             if (isset($aiResponse['priority']) && isset($aiResponse['summary'])) {
-                
                 $priority = strtolower(trim($aiResponse['priority']));
                 
-                // Bileti hem öncelik hem özet hem de işlendi bilgisiyle güncelle
                 $this->ticket->update([
                     'priority' => in_array($priority, ['low', 'medium', 'high']) ? $priority : 'low',
                     'ai_summary' => $aiResponse['summary'],

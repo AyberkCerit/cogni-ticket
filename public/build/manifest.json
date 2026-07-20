@@ -1,0 +1,78 @@
+{
+  "_stagger-CumLrxkE.js": {
+    "file": "assets/stagger-CumLrxkE.js",
+    "name": "stagger"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-BFBRwwHz.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/css/login.css": {
+    "file": "assets/login-Qe2NZim-.css",
+    "src": "resources/css/login.css",
+    "isEntry": true,
+    "name": "login",
+    "names": [
+      "login.css"
+    ]
+  },
+  "resources/css/register.css": {
+    "file": "assets/register-DK1drZkV.css",
+    "src": "resources/css/register.css",
+    "isEntry": true,
+    "name": "register",
+    "names": [
+      "register.css"
+    ]
+  },
+  "resources/css/ticket-create.css": {
+    "file": "assets/ticket-create-CUSRFUPu.css",
+    "src": "resources/css/ticket-create.css",
+    "isEntry": true,
+    "name": "ticket-create",
+    "names": [
+      "ticket-create.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BfpX1doZ.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/dashboard.js": {
+    "file": "assets/dashboard-9I95Iqao.js",
+    "name": "dashboard",
+    "src": "resources/js/dashboard.js",
+    "isEntry": true
+  },
+  "resources/js/login.js": {
+    "file": "assets/login-CRG_fyV7.js",
+    "name": "login",
+    "src": "resources/js/login.js",
+    "isEntry": true,
+    "imports": [
+      "_stagger-CumLrxkE.js"
+    ]
+  },
+  "resources/js/register.js": {
+    "file": "assets/register-BrFOe0FP.js",
+    "name": "register",
+    "src": "resources/js/register.js",
+    "isEntry": true,
+    "imports": [
+      "_stagger-CumLrxkE.js"
+    ]
+  },
+  "resources/js/ticket-create.js": {
+    "file": "assets/ticket-create-B4Q7c_uI.js",
+    "name": "ticket-create",
+    "src": "resources/js/ticket-create.js",
+    "isEntry": true
+  }
+}

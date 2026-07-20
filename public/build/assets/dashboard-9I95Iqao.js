@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{const s=document.querySelectorAll(".count-up"),u=1200,c=1e3/60,r=Math.round(u/c);s.forEach(t=>{const e=parseInt(t.getAttribute("data-target"),10);if(isNaN(e))return;let n=0;const a=()=>{n++;const o=n/r,d=1-(1-o)*(1-o),i=Math.round(e*d);n<r?(t.innerText=i,requestAnimationFrame(a)):t.innerText=e};a()})});
