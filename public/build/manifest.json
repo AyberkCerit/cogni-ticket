@@ -12,6 +12,15 @@
       "app.css"
     ]
   },
+  "resources/css/dashboard.css": {
+    "file": "assets/dashboard-bCd4A0ze.css",
+    "src": "resources/css/dashboard.css",
+    "isEntry": true,
+    "name": "dashboard",
+    "names": [
+      "dashboard.css"
+    ]
+  },
   "resources/css/login.css": {
     "file": "assets/login-Qe2NZim-.css",
     "src": "resources/css/login.css",
