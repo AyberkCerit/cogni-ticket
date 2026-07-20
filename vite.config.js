@@ -15,7 +15,6 @@ export default defineConfig({
                 'resources/js/dashboard.js',
                 'resources/css/ticket-create.css',
                 'resources/css/tickets.css',
-                'resources/js/tickets.js',
                 'resources/js/ticket-create.js'
             ],
             refresh: true,

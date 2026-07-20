@@ -48,6 +48,15 @@
       "ticket-create.css"
     ]
   },
+  "resources/css/tickets.css": {
+    "file": "assets/tickets-CLzoIo9z.css",
+    "src": "resources/css/tickets.css",
+    "isEntry": true,
+    "name": "tickets",
+    "names": [
+      "tickets.css"
+    ]
+  },
   "resources/js/app.js": {
     "file": "assets/app-BfpX1doZ.js",
     "name": "app",
